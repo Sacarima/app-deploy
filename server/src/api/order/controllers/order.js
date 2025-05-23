@@ -36,8 +36,8 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         payment_method_types: ["card"],
         customer_email: email,
         mode: "payment",
-        success_url: "http://localhost:3001/checkout/success",
-        cancel_url: "http://localhost:3001",
+        success_url: `${process.env.REACT_APP_API_URL}/checkout/success`,
+        cancel_url: process.env.REACT_APP_API_URL,
         line_items: lineItems,
       });
 
